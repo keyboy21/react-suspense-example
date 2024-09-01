@@ -9,11 +9,13 @@ export default function Home() {
       <ClientComponents>
         <SlowClientComponent />
       </ClientComponents>
+
+      // When component is not loaded, fallback will be shown
+      // when it is loaded, react will swap out the fallback with the component
+      // you can see this in the devtools on production mode
       <Suspense fallback={<p>Loading...</p>}>
-        <ClientComponents>
           <SlowClientComponent />
           <ServerComponent />
-        </ClientComponents>
       </Suspense>
     </main>
   );
